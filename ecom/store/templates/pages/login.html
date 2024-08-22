@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+<!-- loading tags -->
+    {% load static %}
+
+{% block Title %}
+    Login Page
+{% endblock %}
+
+
+{% block HeaderTitle %}
+    Login
+{% endblock %}
+
+
+{% block HeaderText %}
+    Log In To Your Account  ...
+{% endblock %}
+
+
+{% block CssLink %}
+    <link href="{% static 'css/link.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block Content %}
+    <div class="container">
+        <div class="row">
+            <center>
+                <div class="col-8">
+                    <br/>
+                    <br/>
+
+                    <form>
+                        <div class="form-group">
+                        <input name="username" type="username" class="form-control" id="exampleInputEmail1 " aria-describedby="emailHelp" placeholder="Please Enter Username">
+                        </div>
+                        <div class="form-group pt-4">
+                        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Password">
+                        </div>
+                        <div class="form-check ">
+                        </div>
+                        <button type="submit" class="p-2.5 btn btn-secondary ">Login</button>
+                    </form>
+
+                    <br/>
+                    <br/>
+                </div>
+            </center>
+        </div>
+    </div>
+{% endblock %} 
