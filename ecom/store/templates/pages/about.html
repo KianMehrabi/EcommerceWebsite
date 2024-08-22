@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
+
 <!-- loading all the tags -->
 {% load static %}
 
 
 {% block Title %}
-    About Us...
+    About Us Page
 {% endblock %}
 
 
@@ -19,18 +20,25 @@
 {% endblock %}
 
 
+{% comment %}
+    load static should allways be there to files that import images from static
+{% endcomment %}
+
+
 {% block Content %}
      <!-- Content section 1-->
      <section id="scroll">
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'assets/img/01.jpg' %}" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded"  src="{% static 'assets/img/01.jpg' %}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">For those about to rock...</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <h2 class="display-4">Why Trust Us ?</h2>
+                        <p>
+                            with Tech leading team you can trust us to buy safe and ridiculously beautiful Macs
+                        </p>
                     </div>
                 </div>
             </div>
@@ -41,12 +49,14 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'assets/img/02.jpg' %}" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded"  src="{% static 'assets/img/02.jpg' %}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
-                        <h2 class="display-4">We salute you!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <h2 class="display-4"> What if it broken ? </h2>
+                        <p>
+                            from a very advantages license for our users you can broke it into hath but still get the money back!!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -57,12 +67,15 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'assets/img/03.jpg' %}" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/03.jpg' %}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">Let there be rock!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <h2 class="display-4">what are you waiting for ?</h2>
+                        <p>
+                            you can buy beautiful products and Macs that there are nowhere to be founded so ... what are 
+                            you waiting for ?
+                        </p>
                     </div>
                 </div>
             </div>
