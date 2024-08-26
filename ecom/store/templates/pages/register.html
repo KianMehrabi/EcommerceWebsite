@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+<!-- loading tags -->
+    {% load static %}
+
+{% block Title %}
+    Register Page
+{% endblock %}
+
+
+{% block HeaderTitle %}
+    Register
+{% endblock %}
+
+
+{% block HeaderText %}
+    Create an Account  ...
+{% endblock %}
+
+
+{% block CssLink %}
+    <link href="{% static 'css/link.css' %}" rel="stylesheet" />
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+{% endblock %}
+
+
+{% block Content %}
+    <p>
+        this is register page
+    </p>
+{% endblock %}
