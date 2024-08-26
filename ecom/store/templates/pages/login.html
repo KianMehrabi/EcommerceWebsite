@@ -30,8 +30,10 @@
                 <div class="col-8">
                     <br/>
                     <br/>
+                    
 
-                    <form>
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="form-group">
                         <input name="username" type="username" class="form-control" id="exampleInputEmail1 " aria-describedby="emailHelp" placeholder="Please Enter Username">
                         </div>
@@ -40,7 +42,7 @@
                         </div>
                         <div class="form-check ">
                         </div>
-                        <button type="submit" class="p-2.5 btn btn-secondary ">Login</button>
+                        <button type="post" class="p-2.5 btn btn-secondary ">Login</button>
                     </form>
 
                     <br/>
@@ -49,4 +51,4 @@
             </center>
         </div>
     </div>
-{% endblock %} 
+{% endblock %}
