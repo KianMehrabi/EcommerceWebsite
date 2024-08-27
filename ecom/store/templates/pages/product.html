@@ -38,20 +38,45 @@
 
 
 {% block Content %}
-
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+    <div class="container">
+        <div class="row">
+            <div class="card mb-2 mt-2">
+                <center>
+                    <div class="col-md-4">
+                        <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                </center>
+                <center>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ product.name }}</h5>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <p class="card-text">{{ product.description }}</p>
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    {% if product.on_sale %}
+                                        <strike>
+                                            ${{ product.price }}
+                                        </strike>
+                                        ${{ product.sale_price }}
+                                    {% else %}
+                                        ${{ product.price }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    {{product.catagory}}
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-success">buy</button>
+                        </div>
+                    </div>
+                </center>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                    <p class="card-text"><small class="text-muted">{{ product.sale_price }}</small></p>
-                </div>
-            </div>
-        </div>
+        </div>  
     </div>
-
-    {% endblock %}
+{% endblock %}

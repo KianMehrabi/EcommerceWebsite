@@ -91,12 +91,12 @@
                             </div>
                             <!-- Product price-->
                             {% if product.on_sale %}
-                            <strike>
-                                ${{ product.price }}
-                            </strike>
-                            ${{ product.sale_price }}
+                                <strike>
+                                    ${{ product.price }}
+                                </strike>
+                                ${{ product.sale_price }}
                             {% else %}
-                            ${{ product.price }}
+                                ${{ product.price }}
                             {% endif %}
                         </div>
                     </div>
