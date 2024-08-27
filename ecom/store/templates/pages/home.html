@@ -81,14 +81,18 @@
                             <div class="badge bg-white text-black position-absolute" style="top: 1.3rem; right: 2.4rem">
                                 Sale</div>
                             {% endif %}
-                            <!-- Product preview-->
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>
+                            {% comment %}
+                                <!-- Product preview-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+
+                                add if you like stars
+                            {% endcomment %}
                             <!-- Product price-->
                             {% if product.on_sale %}
                                 <strike>
