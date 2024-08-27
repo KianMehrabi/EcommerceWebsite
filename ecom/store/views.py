@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.generic.edit import FormView
+from django.views.generic import View
 
 # you need this for the CBVs succes url to redirect to a url name!
 from django.urls import reverse_lazy
@@ -43,11 +43,30 @@ def logout_user(request):
     return redirect("home")
 
 
-class RegisterUser(FormView):
+class RegisterUser(View):
     template_name = "pages/register.html"
     form_class = CreatingUserForm
-    success_url = reverse_lazy("home")
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+    def get(self, request):
+        if request.user.is_authenticated:
+            messages.error(request, ("you are already Registered and Loged in"))
+            return redirect("home")
+        form = self.form_class
+        return render(request, self.template_name, context={"form": form})
+
+    def post(self, request):
+        if request.user.is_authenticated:
+            messages.error(request, ("you are already Registered and Loged in"))
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password1"]
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, ("you are Registered and Loged in"))
+                return redirect("home")
+        messages.error(request, ("there was an Error"))
+        return render(request, self.template_name, context={"form": form})
