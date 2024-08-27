@@ -3,87 +3,87 @@
 
 
 <!-- loading tags -->
-{% load static %}
+    {% load static %}
 
 
 {% block Title %}
-About Us Page
+    About Us Page
 {% endblock %}
 
 
 {% block HeaderTitle %}
-Welcome To Mac Shop
+    Welcome To Mac Shop
 {% endblock %}
 
 
 {% block HeaderText %}
-Where you can Buy Safe
+    Where you can Buy Safe
 {% endblock %}
 
 
 {% comment %}
-load static should all ways be there so files that import images from static work!
+    load static should all ways be there so files that import images from static work!
 {% endcomment %}
 
 
 {% block Content %}
-<!-- Content section 1-->
-<section id="scroll">
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/01.jpg' %}" alt="..." />
+    <!-- Content section 1-->
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/01.jpg' %}" alt="..." />
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">Why Trust Us ?</h2>
-                    <p>
-                        with Tech leading team you can trust us to buy safe and ridiculously beautiful Macs
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Content section 2-->
-<section>
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/02.jpg' %}" alt="..." />
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="p-5">
-                    <h2 class="display-4"> What if its broken ? </h2>
-                    <p>
-                        from a very advantages license for our users you can broke it into hath but still get the money
-                        back!!
-                    </p>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Why Trust Us ?</h2>
+                        <p>
+                            with Tech leading team you can trust us to buy safe and ridiculously beautiful Macs
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Content section 3-->
-<section>
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/03.jpg' %}" alt="..." />
+    </section>
+    <!-- Content section 2-->
+    <section>
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/02.jpg' %}" alt="..." />
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">what are you waiting for ?</h2>
-                    <p>
-                        you can buy beautiful products and Macs that there are nowhere to be founded so ... what are
-                        you waiting for ?
-                    </p>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4"> What if its broken ? </h2>
+                        <p>
+                            from a very advantages license for our users you can broke it into hath but still get the money
+                            back!!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- Content section 3-->
+    <section>
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded" src="{% static 'assets/img/03.jpg' %}" alt="..." />
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">what are you waiting for ?</h2>
+                        <p>
+                            you can buy beautiful products and Macs that there are nowhere to be founded so ... what are
+                            you waiting for ?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
