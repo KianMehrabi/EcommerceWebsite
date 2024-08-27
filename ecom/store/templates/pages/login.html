@@ -27,6 +27,7 @@
     <div class="container">
         <div class="row">
             <center>
+                <img src="{% static 'assets/img/02.jpg' %}" alt="image of our company" class="img-thumbnail mt-5">
                 <div class="col-8">
                     <br/>
                     <br/>
@@ -34,11 +35,9 @@
                     <form method="post">
                         {% csrf_token %}
                         <div class="form-group">
-                        <label for="cheese">please enter username: </label>
                         <input name="username" type="username" class="form-control" id="exampleInputEmail1 " aria-describedby="emailHelp" placeholder="Please Enter Username">
                         </div>
                         <div class="form-group pt-4">
-                        <label for="cheese">please enter password: </label>
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Password">
                         </div>
                         <div class="form-check ">

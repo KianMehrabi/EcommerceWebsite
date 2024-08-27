@@ -27,11 +27,36 @@
 
 
 {% block Content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">
-            Register
-        </button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <center>
+                <img src="{% static 'assets/img/01.jpg' %}" alt="image of our company" class="img-thumbnail mt-5">
+                <div class="col-8">
+                    <br/>
+                    <br/>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group pt-4">
+                            
+                            {{ form.password1 }}
+                        </div>
+                        <div class="form-group pt-4">
+                                
+                            {{ form.password2 }}
+                        </div>
+                        
+                        <button type="post" class="p-2.5 mt-4 btn btn-secondary ">Register</button>
+                    </form> 
+
+                    <br/>
+                    <br/>
+                </div>
+            </center>
+        </div>
+    </div>
 {% endblock %}
