@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import View
 
-# you need this for the CBVs succes url to redirect to a url name!
+# you need this for the CBVs succes url to redirect to a url_name!
 from django.urls import reverse_lazy
 
 from .forms import CreatingUserForm
@@ -70,3 +70,15 @@ class RegisterUser(View):
                 return redirect("home")
         messages.error(request, ("there was an Error"))
         return render(request, self.template_name, context={"form": form})
+
+
+class ProductPage(View):
+    template_name = "pages/product.html"
+
+    def get(self, requeset, id, *args, **kwargs):
+        model = Product.objects.get(id=id)
+        return render(
+            requeset,
+            self.template_name,
+            context={"product": model},
+        )

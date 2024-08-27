@@ -1,62 +1,62 @@
 {% extends 'base.html' %}
 
 <!-- loading tags -->
-    {% load static %}
+{% load static %}
 
 {% block Title %}
-    Register Page
+Register Page
 {% endblock %}
 
 
 {% block HeaderTitle %}
-    Register
+Register
 {% endblock %}
 
 
 {% block HeaderText %}
-    Create an Account  ...
+Create an Account ...
 {% endblock %}
 
 
 {% block CssLink %}
-    <link href="{% static 'css/link.css' %}" rel="stylesheet" />
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
+<link href="{% static 'css/link.css' %}" rel="stylesheet" />
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 {% endblock %}
 
 
 {% block Content %}
-    <div class="container">
-        <div class="row">
-            <center>
-                <img src="{% static 'assets/img/01.jpg' %}" alt="image of our company" class="img-thumbnail mt-5">
-                <div class="col-8">
-                    <br/>
-                    <br/>
-                    
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            
-                            {{ form.username }}
-                        </div>
-                        <div class="form-group pt-4">
-                            
-                            {{ form.password1 }}
-                        </div>
-                        <div class="form-group pt-4">
-                                
-                            {{ form.password2 }}
-                        </div>
-                        
-                        <button type="post" class="p-2.5 mt-4 btn btn-secondary ">Register</button>
-                    </form> 
+<div class="container">
+    <div class="row">
+        <center>
+            <img src="{% static 'assets/img/01.jpg' %}" alt="image of our company" class="img-thumbnail mt-5">
+            <div class="col-8">
+                <br />
+                <br />
 
-                    <br/>
-                    <br/>
-                </div>
-            </center>
-        </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group pt-4">
+
+                        {{ form.password1 }}
+                    </div>
+                    <div class="form-group pt-4">
+
+                        {{ form.password2 }}
+                    </div>
+
+                    <button type="post" class="p-2.5 mt-4 btn btn-secondary ">Register</button>
+                </form>
+
+                <br />
+                <br />
+            </div>
+        </center>
     </div>
+</div>
 {% endblock %}

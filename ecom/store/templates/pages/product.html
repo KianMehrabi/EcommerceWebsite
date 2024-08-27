@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+<!-- loading tags -->
+{% load static %}
+
+
+{% block Title %}
+{{ prodcut.name }} product
+{% endblock %}
+
+
+{% block HeaderTitle %}
+Product
+{% endblock %}
+
+
+{% block HeaderText %}
+buy expensive but safe ...
+{% endblock %}
+
+
+{% block CssLink %}
+<link href="{% static 'css/link.css' %}" rel="stylesheet" />
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% endblock %}
+
+
+{% comment %}
+the product name here is the product from "view option" buttion url from "pages/home.html"
+note: its not equals to product model from "pages/home.html" why?
+well becouse "pages/home.html" is geting all the product* but "pages/product.html" only gets one model with the id which
+was
+given to it by "pages/home.html"
+{% endcomment %}
+
+
+{% block Content %}
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text"><small class="text-muted">{{ product.sale_price }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
