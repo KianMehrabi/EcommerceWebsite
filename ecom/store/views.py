@@ -2,7 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.views.generic.edit import FormView
 
+# you need this for the CBVs succes url to redirect to a url name!
+from django.urls import reverse_lazy
+
+from .forms import CreatingUser
 from .models import Product
 
 
@@ -38,5 +43,11 @@ def logout_user(request):
     return redirect("home")
 
 
-def register_user(request):
-    return render(request, "pages/register.html", {})
+class RegisterUser(FormView):
+    template_name = "pages/register.html"
+    form_class = CreatingUser
+    success_url = reverse_lazy("home")
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
