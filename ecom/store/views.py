@@ -7,7 +7,7 @@ from django.views.generic.edit import FormView
 # you need this for the CBVs succes url to redirect to a url name!
 from django.urls import reverse_lazy
 
-from .forms import CreatingUser
+from .forms import CreatingUserForm
 from .models import Product
 
 
@@ -45,7 +45,7 @@ def logout_user(request):
 
 class RegisterUser(FormView):
     template_name = "pages/register.html"
-    form_class = CreatingUser
+    form_class = CreatingUserForm
     success_url = reverse_lazy("home")
 
     def form_valid(self, form):
