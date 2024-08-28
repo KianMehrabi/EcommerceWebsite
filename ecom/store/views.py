@@ -8,12 +8,15 @@ from django.views.generic import View
 from django.urls import reverse_lazy
 
 from .forms import CreatingUserForm
-from .models import Product
+from .models import Product, Category
 
 
 def home_page(request):
     products = Product.objects.all()
-    return render(request, "pages/home.html", {"products": products})
+    categories = Category.objects.all()
+    return render(
+        request, "pages/home.html", {"products": products, "categories": categories}
+    )
 
 
 def about_page(request):
@@ -33,7 +36,7 @@ def login_user(request):
             messages.success(request, ("You Have Been Loged In"))
             return redirect("home")
         else:
-            messages.error(request, ("There was a Error"))
+            messages.error(request, ("There is no person with that data"))
             return redirect("login")
     else:
         return render(request, "pages/login.html", {})
@@ -85,3 +88,11 @@ class ProductPage(View):
             self.template_name,
             context={"product": model},
         )
+
+
+class CatagoryPage(View):
+    template_name = "pages/category.html"
+
+    def get(self, request, category_name, *args, **kwargs):
+        model = Product.objects.filter(category=category_name)
+        return render(request, self.template_name, context={"products": model})

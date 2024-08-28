@@ -18,14 +18,6 @@
     Create an Account ...
 {% endblock %}
 
-
-{% block CssLink %}
-    <link href="{% static 'css/link.css' %}" rel="stylesheet" />
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-{% endblock %}
-
 {% block Message %}
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -96,21 +88,22 @@
 
                         <button type="post" class="p-2.5 mt-4 btn btn-secondary ">Register</button>
                     </form>
-                    <div class="card m-2">
-                        <div class="card-body">
-                            <p class="text-break start">
-                                {% if form.errors %}
+                    {% if form.errors %}
+                        <div class="card m-2">
+                            <div class="card-body">
+                                <p class="text-break text-start">
                                     {% for field in form %}
 
-                                        {% for error in field.errors %}
-                                                {{field.label}}: {{ error|escape }}
-                                        {% endfor %}
+                                            {% for error in field.errors %}
+                                                    <strong> {{field.label}} </strong>: {{ error|escape }}
+                                            {% endfor %}
 
                                     {% endfor %}
-                                {% endif %}
-                            </p>
+                                        
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                    
                     <img src="{% static 'assets/img/01.jpg' %}" alt="image of our company" class="img-thumbnail mt-5">
 
