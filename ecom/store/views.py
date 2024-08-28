@@ -13,10 +13,7 @@ from .models import Product, Category
 
 def home_page(request):
     products = Product.objects.all()
-    categories = Category.objects.all()
-    return render(
-        request, "pages/home.html", {"products": products, "categories": categories}
-    )
+    return render(request, "pages/home.html", {"products": products})
 
 
 def about_page(request):

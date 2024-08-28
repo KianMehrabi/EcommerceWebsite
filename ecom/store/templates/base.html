@@ -1,5 +1,6 @@
 <!-- loading tags -->
     {% load static %}
+    {% load category %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,11 +49,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            {% for category in categories %}
-                                <li><a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}</a></li>
-                            {% endfor %}
+                            {% all_categories %}
                         </ul>
                     </li>
                 </ul>

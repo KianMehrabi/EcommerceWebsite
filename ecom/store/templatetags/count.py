@@ -15,6 +15,7 @@ register = template.Library()
 
 @register.simple_tag
 def count_of_all_categories():
+    print(type(Category.objects.count()))
     return Category.objects.count()
 
 
