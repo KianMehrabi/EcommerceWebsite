@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.generic import View
+from django.views.generic import View, TemplateView
 
 # you need this for the CBVs succes url to redirect to a url_name!
 from django.urls import reverse_lazy
@@ -87,7 +87,7 @@ class ProductPage(View):
         )
 
 
-class CatagoryPage(View):
+class CatagoryPage(TemplateView):
     template_name = "pages/category.html"
 
     def get(self, request, category_name, *args, **kwargs):
