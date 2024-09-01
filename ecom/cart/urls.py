@@ -1,8 +1,10 @@
 from django.urls import path
 
-# importing from views
 from . import views
 
 urlpatterns = [
-    path("view/", views.CartView.as_view(), name="cart_view"),
+    path("", views.CartSummary.as_view(), name="cart_summary"),
+    path("add/", views.CartAdd.as_view(), name="cart_add"),
+    path("delete/", views.CartDelete.as_view(), name="cart_delete"),
+    path("update/", views.CartUpdate.as_view(), name="cart_update"),
 ]

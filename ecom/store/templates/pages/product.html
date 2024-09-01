@@ -23,7 +23,7 @@
     the product name here is the product from "view option" buttion url from "pages/home.html"
     note: its not equals to product model from "pages/home.html" why?
     well becouse "pages/home.html" is geting all the product* but "pages/product.html"
-    only gets one model with the id whichwas
+    only gets one model with the id which was
     given to it by "pages/home.html"
 {% endcomment %}
 
@@ -63,11 +63,50 @@
                                     {{product.category}}
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-success">buy</button>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    {{product.id}}
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <a href="{% url 'home' %}">
+                                        <button type="button" class="btn btn-success">Home Page</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <button type="button"  value="{{ product.id }}" class="btn btn-success" id="add-cart">Add To Cart</button>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </center>
             </div>
         </div>  
     </div>
+    <script>
+        $(document).on('click' , '#add-cart' , function(e){
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '{% url "cart_add" %}',
+                data: {
+                    product_id: $('#add-cart').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    action: 'post',
+                },
+
+                success: function(json){
+                    console.log(json)
+                },
+
+                error: function(xhr , errmsg , err){
+
+                },
+            });
+        })
+    </script>
 {% endblock %}
