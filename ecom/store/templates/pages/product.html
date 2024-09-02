@@ -100,7 +100,7 @@
                 },
 
                 success: function(json){
-                    console.log(json)
+                    document.getElementById("cart-quantity").textContent = json.product_quantity
                 },
 
                 error: function(xhr , errmsg , err){

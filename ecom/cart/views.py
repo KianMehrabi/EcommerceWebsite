@@ -22,10 +22,9 @@ class CartAdd(View):
 
             cart.add(product=product)
 
-            response = JsonResponse({"product Name": product.name})
+            # cart.__len__() gives the lenth of session for every user !!!
+            response = JsonResponse({"product_quantity": cart.__len__()})
             return response
-        else:
-            pass
 
 
 class CartDelete(View):
